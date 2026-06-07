@@ -291,6 +291,36 @@
   .navbtn:hover{background:rgba(251,245,236,.28);opacity:1}
   #prev{left:16px}#next{right:16px}
 
+  /* role cards — vilka är i rummet */
+  .roles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px);margin-top:1.4vh}
+  .role{
+    background:linear-gradient(135deg, rgba(231,195,181,.22), rgba(231,195,181,.07));
+    border:1px solid rgba(168,93,64,.22);border-radius:14px;
+    padding:clamp(14px,2.6vh,24px) clamp(14px,1.6vw,22px);
+  }
+  .role .who{font-family:'Mulish';font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    font-size:clamp(9px,1.2vh,12px);color:var(--terracotta-deep);margin-bottom:.9vh;display:block}
+  .role h3{font-family:'Fraunces';font-weight:500;font-size:clamp(17px,2.8vh,26px);color:var(--ink);margin-bottom:.8vh}
+  .role p{font-size:clamp(12px,1.85vh,16px);line-height:1.4;color:var(--ink-soft)}
+
+  /* affirmations */
+  .affgrid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,2.8vw,44px);margin-top:1vh}
+  .affcol h3{font-family:'Fraunces';font-weight:500;font-size:clamp(16px,2.7vh,25px);margin-bottom:1.3vh}
+  .affcol.her h3{color:var(--terracotta-deep)}
+  .affcol.him h3{color:var(--sage-deep)}
+  .afflist{list-style:none;display:flex;flex-direction:column;gap:1.05vh}
+  .aff{display:flex;align-items:center;gap:.75em;font-size:clamp(12px,1.95vh,18px);line-height:1.3;color:var(--ink)}
+  .play{
+    flex:0 0 auto;width:clamp(26px,3.8vh,36px);height:clamp(26px,3.8vh,36px);border-radius:50%;
+    border:none;cursor:pointer;background:var(--terracotta);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:.72em;padding-left:.12em;
+    transition:transform .2s,background .2s;
+  }
+  .play:hover{transform:scale(1.09);background:var(--terracotta-deep)}
+  .play.playing{background:var(--sage-deep);padding-left:0}
+  .affcol.him .play{background:var(--sage)}
+  .affcol.him .play:hover{background:var(--sage-deep)}
+
   @media (max-width:680px){
     .layout-split,.hero{grid-template-columns:1fr}
     .layout-split .col-media,.hero .col-media{display:none}
@@ -329,9 +359,9 @@
       <ul class="clean">
         <li><b>När det börjar</b> <span>— hur ni vet att det är dags</span></li>
         <li><b>Förlossningens faser</b> <span>— steg för steg</span></li>
-        <li><b>Profylax</b> <span>— andning &amp; avslappning ni tränar in</span></li>
-        <li><b>Smärtlindring</b> <span>— med och utan läkemedel</span></li>
-        <li><b>Joakims roll</b> <span>— konkret i varje skede</span></li>
+        <li><b>Rummet &amp; vilka som är där</b> <span>— så ni vet vad som väntar</span></li>
+        <li><b>Profylax &amp; smärtlindring</b> <span>— andning, och med/utan läkemedel</span></li>
+        <li><b>Affirmationer &amp; Jockes plats</b> <span>— ord som bär, och var han står</span></li>
         <li><b>Om planen ändras</b> <span>— och de första timmarna efteråt</span></li>
       </ul>
       <p class="note">Avbryt och fråga precis när ni vill — det här är för er.</p>
@@ -378,6 +408,39 @@
           <div><h3>Efterbördsskedet</h3><p>Moderkakan föds, kort efter barnet.</p></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- 4b — FÖRLOSSNINGSRUMMET -->
+  <section class="slide layout-split">
+    <div class="col-text pad">
+      <div class="inner">
+        <div class="eyebrow">Platsen</div>
+        <h2>Förlossningsrummet</h2>
+        <p class="lead">Det är lugnare än man tror — ett rum som är ert under tiden ni är där.</p>
+        <ul class="clean" style="margin-top:1.6vh">
+          <li><b>Sängen</b> <span>ställs om i olika lägen efter vad som känns bra</span></li>
+          <li><b>CTG</b> <span>lyssnar då och då på barnets hjärtljud</span></li>
+          <li><b>Boll, dusch eller badkar</b> <span>finns på många rum</span></li>
+          <li><b>Dämpad belysning</b> <span>går att få — och plats för Jocke</span></li>
+        </ul>
+        <p class="note">Ni får påverka ljus, musik och vilka som är inne. Säg vad ni vill ha.</p>
+      </div>
+    </div>
+    <div class="col-media"><img src="images/A-rummet.png" alt="Lugnt förlossningsrum"></div>
+  </section>
+
+  <!-- 4c — VILKA ÄR I RUMMET -->
+  <section class="slide layout-default">
+    <div class="pad inner">
+      <div class="eyebrow">Människorna</div>
+      <h2>Vilka är i rummet</h2>
+      <div class="roles">
+        <div class="role"><span class="who">Alltid</span><h3>Barnmorska</h3><p>Leder förlossningen, fattar de medicinska besluten och tar emot barnet.</p></div>
+        <div class="role"><span class="who">Alltid</span><h3>Undersköterska</h3><p>Assisterar barnmorskan och finns där för er — praktiskt och med stöd.</p></div>
+        <div class="role"><span class="who">Vid behov</span><h3>Läkare</h3><p>Barnläkare för barnet, eller narkosläkare vid t.ex. ryggbedövning.</p></div>
+      </div>
+      <p class="note">Barnmorskan kommer och går — ni är aldrig ensamma med ansvaret, men inte heller bevakade varje sekund. Studenter frågar alltid om lov först.</p>
     </div>
   </section>
 
@@ -528,6 +591,57 @@
       </div>
       <p class="note">Marie: stäm av mot klinikens faktiska utbud.</p>
     </div>
+  </section>
+
+  <!-- 12b — AFFIRMATIONER -->
+  <section class="slide layout-default">
+    <div class="pad inner">
+      <div class="eyebrow">Ord som bär · tryck på ▶ för att höra</div>
+      <h2>Affirmationer</h2>
+      <div class="affgrid">
+        <div class="affcol her">
+          <h3>Felicia — till sig själv</h3>
+          <ul class="afflist">
+            <li class="aff"><button class="play" data-src="audio/aff-f-1.mp3" aria-label="Spela">▶</button>"Min kropp vet hur man gör det här."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-f-2.mp3" aria-label="Spela">▶</button>"Varje värk för mig närmare mitt barn."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-f-3.mp3" aria-label="Spela">▶</button>"Jag andas in lugn — andas ut spänning."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-f-4.mp3" aria-label="Spela">▶</button>"En värk i taget. Jag klarar den här."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-f-5.mp3" aria-label="Spela">▶</button>"Jag öppnar mig och släpper taget."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-f-6.mp3" aria-label="Spela">▶</button>"Det gör ont för att det fungerar."</li>
+          </ul>
+        </div>
+        <div class="affcol him">
+          <h3>Jocke — till Felicia</h3>
+          <ul class="afflist">
+            <li class="aff"><button class="play" data-src="audio/aff-m-1.mp3" aria-label="Spela">▶</button>"Du gör det redan. Just nu."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-m-2.mp3" aria-label="Spela">▶</button>"Jag är här. Jag går ingenstans."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-m-3.mp3" aria-label="Spela">▶</button>"Andas med mig — in, och ut."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-m-4.mp3" aria-label="Spela">▶</button>"Nästa värk, sen vilar vi."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-m-5.mp3" aria-label="Spela">▶</button>"Titta på mig. Vi tar den tillsammans."</li>
+            <li class="aff"><button class="play" data-src="audio/aff-m-6.mp3" aria-label="Spela">▶</button>"Snart får vi träffa hen."</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12c — JOCKES PLATS -->
+  <section class="slide layout-split">
+    <div class="col-text pad">
+      <div class="inner">
+        <div class="eyebrow">Var står jag?</div>
+        <h2>Jockes plats</h2>
+        <p class="lead">Din plats är vid hennes ansikte — det är där du gör mest nytta.</p>
+        <ul class="clean" style="margin-top:1.6vh">
+          <li><b>Vid huvudänden, i ögonhöjd</b> <span>— för andning, ögonkontakt och lugn röst</span></li>
+          <li><b>Bredvid eller bakom</b> <span>i stående lägen — stötta överkroppen, tryck på korsryggen</span></li>
+          <li><b>Vid krystningen</b> <span>— vid hennes överkropp, håll handen och andas med</span></li>
+          <li><b>Ur vägen för barnmorskan</b> <span>— du behöver inte titta neråt om du inte vill</span></li>
+        </ul>
+        <p class="note">Ät, drick och sätt dig vid behov — du hjälper ingen genom att svimma.</p>
+      </div>
+    </div>
+    <div class="col-media"><img src="images/D-jockes-plats.png" alt="Partnerns placering vid sängen"></div>
   </section>
 
   <!-- 13 — JOAKIMS VERKTYGSLÅDA -->
@@ -691,6 +805,28 @@
 
   // fade hint after a moment
   setTimeout(() => hint.classList.add('fade'), 5000);
+
+  // affirmation audio — one at a time, click again to stop
+  let curAudio = null, curBtn = null;
+  function stopAudio(){
+    if(curAudio){ curAudio.pause(); curAudio = null; }
+    if(curBtn){ curBtn.classList.remove('playing'); curBtn.textContent = '▶'; curBtn = null; }
+  }
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.play');
+    if(!btn) return;
+    const wasSame = (btn === curBtn);
+    stopAudio();
+    if(wasSame) return;            // toggled off
+    const a = new Audio(btn.dataset.src);
+    curAudio = a; curBtn = btn;
+    btn.classList.add('playing'); btn.textContent = '❚❚';
+    a.play().catch(()=>{});
+    a.onended = () => { if(btn === curBtn) stopAudio(); };
+  });
+  // stop any playing clip when leaving the slide
+  const _go = go;
+  go = function(n){ stopAudio(); _go(n); };
 
   render();
 </script>
