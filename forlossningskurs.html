@@ -180,8 +180,22 @@
      radial-gradient(120% 120% at 70% 30%, var(--blush), var(--cream-2) 70%);}
 
   /* ---------- HERO (slide 1) ---------- */
-  .hero{display:grid;grid-template-columns:1.1fr .9fr}
+  .hero{display:grid;grid-template-columns:1fr 1fr}
   .hero .col-text{display:flex;align-items:center}
+  /* show the personal illustration in FULL — never cropped */
+  .hero .col-media{
+    background:transparent;
+    display:flex;align-items:center;justify-content:center;
+    padding:clamp(16px,3.5vh,42px);
+  }
+  .hero .col-media::before,.hero .col-media::after{display:none}
+  .hero .col-media img{
+    position:static;
+    width:100%;height:100%;
+    object-fit:contain;
+    border-radius:10px;
+    filter:drop-shadow(0 24px 44px rgba(59,42,34,.22));
+  }
   .hero h1{font-size:clamp(42px,10vh,104px)}
   .hero .sub{
     font-family:'Fraunces';font-style:italic;font-weight:400;
